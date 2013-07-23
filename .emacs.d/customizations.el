@@ -12,6 +12,9 @@
 (column-number-mode t)
 (size-indication-mode t)
 
+;; color theme
+(load-theme 'deeper-blue t)
+
 ;;;=======================================
 ;;; Behavior
 ;;;=======================================
@@ -25,32 +28,37 @@
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
 
-;; Don't clutter up directories with files~
-;;(setq backup-directory-alist `(("." . ,(expand-file-name
-;;                                        (concat dotfiles-dir "backups")))))
+;;; Make scripts executable on save if the shebang line exists
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
+
+;; Make sure spaces are used when indenting code
+(setq-default indent-tabs-mode nil)
+
+;; store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+;; meaningful names for buffers with the same name
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+(setq uniquify-separator "/")
+(setq uniquify-after-kill-buffer-p t)    ; rename after killing uniquified
+(setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
+
+;; show-paren-mode: subtle highlighting of matching parens (global-mode)
+(require 'paren)
+(setq show-paren-style 'parenthesis)
+(show-paren-mode +1)
 
 ;;;=======================================
-;;; Packages
-;;;=======================================
+;;; OS-Specifics
+;;;======================================
 
-(require 'package)
-(add-to-list 'package-archives
-            '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-            '("ELPA" . "http://tromey.com/elpa/") t)
-(add-to-list 'package-archives
-            '("gnu" . "http://elpa.gnu.org/packages/") t)
-(package-initialize)
-
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-;; Add in your own as you wish:
-(defvar my-packages '()
-  "A list of packages to ensure are installed at launch.")
-
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+;; OSX specific settings
+(when (eq system-type 'darwin)
+  (require 'customizations-osx))
 
 (provide 'customizations)
