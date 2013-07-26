@@ -1,6 +1,6 @@
 (add-auto-mode 'ruby-mode
                "Rakefile\\'" "\\.rake\\'" ".irbrc\\'" "\\.ru\\'"
-               "\\.gemspec\\'" "Gemfile\\'" ".pryrc\\'")
+               "\\.gemspec\\'" "Gemfile\\'" ".pryrc\\'" "Guardfile\\'")
 
 (add-hook 'ruby-mode-hook
           (lambda ()

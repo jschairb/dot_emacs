@@ -17,7 +17,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar global-packages '(markdown-mode ruby-mode)
+(defvar global-packages '(markdown-mode ruby-mode ruby-electric)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p global-packages)
