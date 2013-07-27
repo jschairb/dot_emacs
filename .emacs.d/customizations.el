@@ -61,6 +61,7 @@
 (ido-ubiquitous t)
 (require 'flx-ido)
 (setq ido-enable-prefix nil
+      ido-save-directory-list-file (expand-file-name "ido.hist" dot-emacs-savefile-dir)
       ido-enable-flex-matching t
       ido-create-new-buffer 'always
       ido-use-filename-at-point 'guess
