@@ -53,6 +53,22 @@
 (setq show-paren-style 'parenthesis)
 (show-paren-mode +1)
 
+;;;======================================
+;;; IDO Mode
+;;;======================================
+
+(ido-mode t)
+(ido-ubiquitous t)
+(require 'flx-ido)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-use-virtual-buffers t
+      ido-handle-duplicated-virtual-buffers 2
+      ido-max-prospects 10)
+(setq ido-use-faces nil)
+
 ;;;=======================================
 ;;; OS-Specifics
 ;;;======================================
