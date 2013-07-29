@@ -53,6 +53,13 @@
 (setq show-paren-style 'parenthesis)
 (show-paren-mode +1)
 
+
+;;;======================================
+;;; Hooks
+;;;=====================================
+;;; http://batsov.com/articles/2011/11/25/emacs-tip-number-3-whitespace-cleanup/
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;;;======================================
 ;;; IDO Mode
 ;;;======================================
