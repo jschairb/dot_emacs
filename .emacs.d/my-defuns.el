@@ -6,6 +6,15 @@
   (dolist (pattern patterns)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
+(defun duplicate-line ()
+  "*Insert a copy of the current line below the current line."
+  (interactive)
+  (save-excursion
+    (let ((start (progn (beginning-of-line) (point)))
+          (end (progn (end-of-line) (point))))
+      (insert ?\n)
+      (insert-buffer-substring (current-buffer) start end))))
+
 (defun indent-buffer ()
   (interactive)
   (indent-region (point-min) (point-max)))

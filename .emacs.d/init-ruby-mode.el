@@ -32,3 +32,5 @@
 
 (add-hook 'ruby-mode-hook
           (lambda () (run-hooks 'dot-emacs-code-modes-hook)))
+
+(provide 'init-ruby-mode)

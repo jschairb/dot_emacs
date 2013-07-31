@@ -1,2 +1,3 @@
 *.emacs.d/elpa/*
+*.emacs.d/savefile*
 *.emacs.d/url*
