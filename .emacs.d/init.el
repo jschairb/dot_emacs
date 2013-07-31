@@ -17,6 +17,7 @@
 (require 'thingatpt)
 
 (require 'my-defuns)
+(require 'my-hooks)
 (require 'my-bindings)
 (require 'my-packages)
 

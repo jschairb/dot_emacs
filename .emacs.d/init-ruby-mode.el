@@ -20,7 +20,7 @@
                "Capfile\\'")
 
 ;; Untabify buffer on save
-(add-hook 'ruby-mode-hook 
+(add-hook 'ruby-mode-hook
           '(lambda ()
              (make-local-variable 'write-contents-hooks)
              (add-hook 'write-contents-hooks 'ruby-mode-untabify)))
@@ -29,3 +29,6 @@
           (lambda ()
             (unless (derived-mode-p 'prog-mode)
               (run-hooks 'prog-mode-hook))))
+
+(add-hook 'ruby-mode-hook
+          (lambda () (run-hooks 'dot-emacs-code-modes-hook)))
