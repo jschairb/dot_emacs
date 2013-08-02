@@ -5,4 +5,4 @@
 (global-set-key (kbd "M-g")     'goto-line)
 (global-set-key (kbd "M-n")     'duplicate-line)
 
-(provide 'my-bindings)
+(provide 'dot-emacs-keybindings)

@@ -3,6 +3,10 @@
 (defvar dot-emacs-dir user-emacs-directory)
 (add-to-list 'load-path dot-emacs-dir)
 
+(defvar dot-emacs-core-dir (expand-file-name "core" dot-emacs-dir)
+  "The core functionality of this configuration.")
+(add-to-list 'load-path dot-emacs-core-dir)
+
 (defvar dot-emacs-savefile-dir (expand-file-name "savefile" dot-emacs-dir)
   "This folder stores all the automatically generated save/history-files.")
 
@@ -16,10 +20,10 @@
 (require 'cl)
 (require 'thingatpt)
 
-(require 'my-defuns)
-(require 'my-hooks)
-(require 'my-bindings)
-(require 'my-packages)
+(require 'dot-emacs-defuns)
+(require 'dot-emacs-hooks)
+(require 'dot-emacs-keybindings)
+(require 'dot-emacs-packages)
 
 (require 'customizations)
 

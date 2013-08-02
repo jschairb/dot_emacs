@@ -58,4 +58,4 @@ Position the cursor at it's beginning, according to the current mode."
   (interactive)
   (untabify (point-min) (point-max)))
 
-(provide 'my-defuns)
+(provide 'dot-emacs-defuns)

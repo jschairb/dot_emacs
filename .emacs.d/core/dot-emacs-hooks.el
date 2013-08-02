@@ -2,4 +2,4 @@
 (add-hook 'dot-emacs-code-modes-hook
           (lambda () (linum-mode 1)))
 
-(provide 'my-hooks)
+(provide 'dot-emacs-hooks)
