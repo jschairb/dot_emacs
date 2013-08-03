@@ -15,6 +15,11 @@
 ;; color theme
 (load-theme 'deeper-blue t)
 
+;; sets the font
+(set-face-attribute 'default nil
+                    :family "Menlo"
+                    :height 140)
+
 ;;;=======================================
 ;;; Behavior
 ;;;=======================================

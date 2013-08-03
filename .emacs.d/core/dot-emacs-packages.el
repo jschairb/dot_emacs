@@ -17,7 +17,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar global-packages '(ido-ubiquitous flx-ido markdown-mode ruby-mode ruby-electric)
+(defvar global-packages '(ido-ubiquitous flx-ido markdown-mode rbenv rspec-mode ruby-mode ruby-electric)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p global-packages)
@@ -29,5 +29,9 @@
 (when (package-installed-p 'markdown-mode)
   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
+
+;; rbenv.el
+(setq rbenv-show-active-ruby-in-modeline nil)
+(global-rbenv-mode)
 
 (provide 'dot-emacs-packages)
