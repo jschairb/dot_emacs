@@ -17,7 +17,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar global-packages '(ido-ubiquitous flx-ido markdown-mode rbenv rspec-mode ruby-mode ruby-electric)
+(defvar global-packages '(ido-ubiquitous flx-ido markdown-mode rbenv rspec-mode ruby-mode ruby-electric smex)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p global-packages)
@@ -33,5 +33,10 @@
 ;; rbenv.el
 (setq rbenv-show-active-ruby-in-modeline nil)
 (global-rbenv-mode)
+
+;; smex
+(setq smex-save-file (concat user-emacs-directory ".smex-items"))
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
 
 (provide 'dot-emacs-packages)
