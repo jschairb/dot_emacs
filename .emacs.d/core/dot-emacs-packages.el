@@ -17,7 +17,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar global-packages '(ido-ubiquitous flx-ido markdown-mode rbenv rspec-mode ruby-mode ruby-electric smex)
+(defvar global-packages '(ido-ubiquitous flx-ido markdown-mode rspec-mode ruby-mode ruby-electric smex)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p global-packages)
@@ -30,9 +30,13 @@
   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
 
-;; rbenv.el
-(setq rbenv-show-active-ruby-in-modeline nil)
-(global-rbenv-mode)
+;; Add rbenv support if it's installed
+(when (file-exists-p rbenv-installation-dir)
+  (when (not (package-installed-p 'rbenv))
+    (package-install 'rbenv))
+  (setq rbenv-show-active-ruby-in-modeline nil)
+  (global-rbenv-mode)
+  )
 
 ;; smex
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
