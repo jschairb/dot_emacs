@@ -1,3 +1,4 @@
 *.emacs.d/elpa/*
 *.emacs.d/savefile*
 *.emacs.d/url*
+*.emacs.d/.smex-items

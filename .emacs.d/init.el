@@ -13,7 +13,7 @@
 (unless (file-exists-p dot-emacs-savefile-dir)
   (make-directory dot-emacs-savefile-dir))
 
-(setq rbenv-installation-dir "/usr/local/opt/rbenv")
+;;(setq rbenv-installation-dir "/usr/local/opt/rbenv")
 
 ;;;(defvar init-dir (expand-file-name "init.d" dot-emacs-dir)
 ;;;  "The home of dot_emacs initialization.")

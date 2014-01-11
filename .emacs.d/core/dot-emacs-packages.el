@@ -31,12 +31,12 @@
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
 
 ;; Add rbenv support if it's installed
-(when (file-exists-p rbenv-installation-dir)
-  (when (not (package-installed-p 'rbenv))
-    (package-install 'rbenv))
-  (setq rbenv-show-active-ruby-in-modeline nil)
-  (global-rbenv-mode)
-  )
+;; (when (file-exists-p rbenv-installation-dir)
+;;   (when (not (package-installed-p 'rbenv))
+;;     (package-install 'rbenv))
+;;   (setq rbenv-show-active-ruby-in-modeline nil)
+;;   (global-rbenv-mode)
+;;   )
 
 ;; smex
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
